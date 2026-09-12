@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致刘亦菲</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff8fab, #ffc0cb, #ffe6ee);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: "Microsoft Yahei", sans-serif;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            color: #ff3366;
+            font-size: 24px;
+            animation: float 6s infinite ease-in-out;
+            user-select: none;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .box {
+            background: rgba(255,255,255,0.85);
+            padding: 60px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 60, 100, 0.25);
+            text-align: center;
+            max-width: 520px;
+            z-index: 10;
+        }
+        h1 {
+            color: #d82b58;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+        p {
+            font-size: 18px;
+            color: #444;
+            line-height: 2;
+            margin-bottom:12px;
+        }
+        .end-text {
+            margin-top:30px;
+            font-size:20px;
+            color:#c41e4a;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>💌 致刘亦菲</h1>
+        <p>世间万千风景，都不及你眉眼半分。</p>
+        <p>见过无数人，唯独对你动了心。</p>
+        <p>你的温柔、干净与从容，是心底最美好的向往。</p>
+        <p>茫茫人海，有幸遇见你。</p>
+        <div class="end-text">我喜欢你。❤️</div>
+    </div>
+
+    <script>
+        // 生成随机飘落爱心
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (4 + Math.random() *4) + 's';
+            heart.style.fontSize = (14 + Math.random()*22)+'px';
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+                heart.remove();
+            },8000)
+        }
+        setInterval(createHeart,400);
+    </script>
+</body>
+</html>
